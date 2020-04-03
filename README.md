@@ -35,26 +35,26 @@ import haSDK from 'react-native-ha-interface';
 // Compile the haOnEvent function to call the onEvent API in the SDK.
 // eventObj is the parameter object contained in the custom event that you want to upload. The parameter can be of the string, number, and bool types.
 function haOnEvent(){
-const eventObj={
-testString:'StrContent',
-testInt:20,
-testDouble:2.2,
-testBoolean:false
+  const eventObj={
+   testString:'StrContent',
+   testInt:20,
+   testDouble:2.2,
+   testBoolean:false
+ }
+ haSDK.onEvent('newTestEvent',eventObj);
 }
-haSDK.onEvent('newTestEvent',eventObj);
-}
-
+```
 3) Report the preset event.
 ```JavaScript
 const eventObj={
-PRODUCTID:'item_ID',
-PRODUCTNAME:'name',
-CATEGORY:'category',
-QUANTITY:100,
-PRICE:10.01,
-REVENUE:10,
-CURRNAME:'currency',
-PLACEID:'location_ID'
+ PRODUCTID:'item_ID',
+ PRODUCTNAME:'name',
+ CATEGORY:'category',
+ QUANTITY:100,
+ PRICE:10.01,
+ REVENUE:10,
+ CURRNAME:'currency',
+ PLACEID:'location_ID'
 }
 haSDK.onEvent(hasdk.ADDPRODUCT2WISHLIST,eventObj);
 ```
